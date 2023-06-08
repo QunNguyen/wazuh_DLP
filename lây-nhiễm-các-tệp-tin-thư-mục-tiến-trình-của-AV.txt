@@ -1,0 +1,15 @@
+rule detect_av_infection {
+    meta:
+        author = "B19DCAT147"
+        description = "phat hien ma doc lay nhiem vao cac tep tin, thu muc, tien trinh AV"
+ 
+    strings:
+        $av_infected_exe = { 2A 61 76 2E 65 78 65 }     // *.av.exe
+        $av_infected_dir = { 2A 61 76 2A }              // *av*
+        $av_infected_svc = { 2A 61 76 73 76 63 2E 65 78 65 }    // *avsvc.exe
+        $av_infected_config = { 2A 61 76 63 6F 6E 66 69 67 2E 65 78 65 }   // *avconfig.exe
+        $av_infected_process = { 2A 61 76 70 72 6F 63 65 73 73 2A }     // *avprocess*
+ 
+    condition:
+        $av_infected_exe or $av_infected_dir or $av_infected_svc or $av_infected_config or $av_infected_process
+}

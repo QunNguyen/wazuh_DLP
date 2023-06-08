@@ -1,0 +1,13 @@
+rule detect_anti_virus_modification {
+    meta:
+        author = "B19DCAT147"
+        description = "phat hien ma doc làm sua doi registry keys, services , drivers của AV"
+ 
+    strings:
+        $av_modify_registry_key = { 2A 61 76 2E 72 65 67 }
+        $av_modify_registry_key2 = { 6D 6F 64 69 66 79 2D 61 76 }
+        $av_modify_service = { 61 76 73 76 63 2E 65 78 65 }  
+        $av_modify_driver = { 61 76 73 76 69 64 2E 73 79 73 }
+    condition:
+        $av_modify_registry_key or $av_modify_registry_key2 or $av_modify_service or $av_modify_driver
+}

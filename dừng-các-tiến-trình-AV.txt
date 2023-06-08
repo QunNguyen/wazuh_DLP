@@ -1,0 +1,12 @@
+rule malware_stop_av {
+    meta:
+        author = "B19DCAT147"
+        description = "phat hien ma doc dung cac tien trinh AV"
+ 
+    strings:
+        $stop_av_process1 = { 73 63 2E 65 78 65 }    
+        $stop_av_process2 = { 4E 54 41 55 54 49 4C 55 53 20 53 65 63 75 72 69 74 79 20 43 65 6E 74 65 72 } 
+ 
+    condition:
+        $stop_av_process1 or $stop_av_process2
+}

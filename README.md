@@ -10,3 +10,9 @@ Wazuh chỉ có hỗ trợ theo dõi, phân tích, gửi cảnh qua email thông
 Wazuh có hỗ trợ API nhưng cho đến hiện tại API đang ngừng hỗ trợ online chỉ gọi được theo local.
 Wazuh server và Wazuh agent có cho phép thêm luật từ bên ngoài vào hệ thống.
 ----------------------------------------
+Để tác động để máy agent, ta có thể sử dụng C# để tạo 1 chương trình chạy ngầm kiểm soát hành động của agent.Ở đây chúng tôi làm ví dụ về hành vi tác động đến file trong 1 folder gồm các hành động xóa, sửa, thêm, di chuyển file. Nếu hành động được thực hiện sẽ hiện cảnh báo, gửi thông báo đến email của admin và cưỡng chế đăng xuất tài khoản người dùng ra khỏi máy tính.
+----------------------------------------
+Dự định tương lai:
+ -  Phát triển thêm các hành động theo dõi các hành vi người dùng 
+ -  Thêm các chính sách kiểm soát các hành vi người dùng chặt chẽ hơn
+ -  Kiểm soát các dữ liệu của các file dữ liệu (Mã hóa, xóa file khi có sự kiện tác động, thay đổi mật khẩu người dùng khi người dùng đăng nhập vi phạm chính sách)
